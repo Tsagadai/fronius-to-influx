@@ -141,7 +141,8 @@ class FroniusToInflux:
                     sleep(10)
                     print('Waited 10 seconds for connection')
                 except KeyError:
-                    raise WrongFroniusData('Response structure is not healthy')
+                    #raise WrongFroniusData('Response structure is not healthy')
+                    print("Data is missing keys, probably restarting inverter")
                 except Exception as e:
                     self.data = {}
                     sleep(10)
