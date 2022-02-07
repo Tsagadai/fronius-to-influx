@@ -23,6 +23,7 @@ class DataCollectionError(Exception):
     pass
 
 
+
 class FroniusToInflux:
     BACKOFF_INTERVAL = 3
     IGNORE_SUN_DOWN = False
@@ -33,6 +34,9 @@ class FroniusToInflux:
         self.endpoints = endpoints
         self.tz = tz
         self.data: Dict[Any, Any] = {}
+
+
+    def get_archive_vdc(self):
 
     def get_float_or_zero(self, value: str) -> float:
         internal_data: Dict[Any, Any] = {}
